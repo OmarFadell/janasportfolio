@@ -54,6 +54,19 @@ export default function ProgrammePage() {
     return url;
   };
 
+  const isYouTube = (url = "") => {
+  try {
+    const u = new URL(url);
+    const host = u.hostname.replace("www.", "").toLowerCase();
+    return host.includes("youtube.com") || host.includes("youtu.be");
+  } catch {
+    // fallback for non-absolute URLs or invalid URLs
+    const lower = url.toLowerCase();
+    return lower.includes("youtube.com") || lower.includes("youtu.be");
+  }
+};
+
+
   return (
     <Box
       sx={{
@@ -183,7 +196,17 @@ export default function ProgrammePage() {
         >
           {/* ⭐ Card now free to handle hover transform */}
           <Card
-            onClick={() => setActive(episode)}
+            onClick={(e) => {
+              e.preventDefault();
+
+              if (isYouTube(episode.videoUrl)) {
+                // 🔥 Open modal
+                setActive(episode);
+              } else if (episode.videoUrl) {
+                // 🔥 Redirect to external link
+                window.open(episode.videoUrl, "_blank", "noopener,noreferrer");
+              }
+            }}
             sx={{
               height: category.slug === "academic" ? 600 : 260,
               width: 400,
@@ -191,6 +214,7 @@ export default function ProgrammePage() {
               cursor: 'pointer',
             }}
           >
+
             <Image
               src={episode.image}
               alt={episode.title}
