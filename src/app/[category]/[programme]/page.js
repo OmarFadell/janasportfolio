@@ -198,14 +198,8 @@ export default function ProgrammePage() {
           <Card
             onClick={(e) => {
               e.preventDefault();
+              window.open(episode.videoUrl, "_blank", "noopener,noreferrer");
 
-              if (isYouTube(episode.videoUrl)) {
-                // 🔥 Open modal
-                setActive(episode);
-              } else if (episode.videoUrl) {
-                // 🔥 Redirect to external link
-                window.open(episode.videoUrl, "_blank", "noopener,noreferrer");
-              }
             }}
             sx={{
               height: category.slug === "academic" ? 600 : 260,
