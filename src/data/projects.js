@@ -178,7 +178,7 @@ export const categories = {
 
   localBrands: {
     slug: 'local-brands',
-    name: 'Local Brands & Freelance',
+    name: 'Local Brands',
     thumbnail: '/resrcs/fl.png',
 
     // treat each brand as a "programme" with its own episodes array

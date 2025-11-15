@@ -41,12 +41,12 @@ export default function Home() {
           flexDirection: 'column',
           alignItems: 'center',
           gap: 4,
-          mx: { xs: 2, sm: 0, md: 0 },
+          mx: { xs: 1, sm: 0, md: 0 },
         }}
       >
         <h1 style={{ color: 'white', margin: 0, fontFamily: 'var(--font-stack-sans-headline)' }}>What are we watching?</h1>
 
-        <Grid container spacing={2} columns={{ xs: 1, sm: 8, md: 12 }} mx={{ xs: 2.6, sm: 8, md: 12 }}>
+        <Grid container spacing={2} columns={{ xs: 1, sm: 8, md: 12 }} mx={{ xs: 7, sm: 8, md: 12 }}>
   {categoryList.map((cat, index) => (
     <Grid key={cat.slug} item xs={1} sm={4} md={4}>
       <Link href={`/${cat.slug}`} style={{ textDecoration: 'none' }}>
@@ -67,8 +67,8 @@ export default function Home() {
           {/* ⭐ Card now free to hover-scale */}
           <Card
             sx={{
-              width: { xs: 150, sm: 160, md: 260 },
-              height: { xs: 150, sm: 160, md: 260 },
+              width: { xs: 110, sm: 160, md: 260 },
+              height: { xs: 110, sm: 160, md: 260 },
               borderRadius: '50%',
               overflow: 'hidden',
               margin: '0 auto',
