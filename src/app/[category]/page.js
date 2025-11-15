@@ -45,7 +45,7 @@ export default function CategoryPage({ params }) {
   }));
 
 return (
-    <Box sx={{ flexGrow: 1, mx: 'auto', my: { xs: 5, md: 10 }, maxWidth: 1000, px: 2, ml: { xs: 6, md: 'auto' } }}>
+    <Box sx={{ flexGrow: 1, mx: 'auto', my: { xs: 5, md: 10 }, maxWidth: 1000, px: 2, ml: { xs: 3, md: 'auto' } }}>
 
             <Box sx={{ mb: 3 }}>
             <Breadcrumbs aria-label="breadcrumb" sx={{ color: 'white' }}>
