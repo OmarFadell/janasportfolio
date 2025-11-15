@@ -1,4 +1,7 @@
-import { Geist, Geist_Mono, Stack_Sans_Headline } from "next/font/google";
+// src/app/layout.js
+import { Geist, Geist_Mono } from "next/font/google";
+import "@fontsource/stack-sans-headline/400.css";
+import "@fontsource/stack-sans-headline/700.css";
 import "./globals.css";
 import Navbar from "./Components/Navbar";
 
@@ -12,11 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const StackSansHeadline = Stack_Sans_Headline({
-  variable: "--font-stack-sans-headline",
-  subsets: ["latin"],
-  weight: ["200","300","400","500", "600", "700"],
-});
+// ❌ REMOVE this – we don't use next/font for Stack Sans Headline
+// const StackSansHeadline = Stack_Sans_Headline({...});
 
 export const metadata = {
   title: "Create Next App",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${StackSansHeadline.variable}`}
+        className={`${geistSans.variable} ${geistMono.variable}`}
       >
         <Navbar />
         {children}

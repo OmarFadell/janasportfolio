@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
 export default function ProgrammePage() {
+  const [active, setActive] = useState(null);
   const pathname = usePathname();
   const segments = pathname.split('/').filter(Boolean);
 
@@ -23,6 +24,7 @@ export default function ProgrammePage() {
 
   const category = getCategory(categorySlug);
   const programme = getProgramme(categorySlug, programmeId);
+  
 
   if (!category || !programme) {
     return (
@@ -34,7 +36,6 @@ export default function ProgrammePage() {
     );
   }
 
-  const [active, setActive] = useState(null);
 
   const Card = styled(Paper)(({ theme }) => ({
     position: 'relative',
